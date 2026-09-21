@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - MyCoGuard{% endblock %}
+{% block body %}
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand-mark">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+      <div>
+        <div class="brand-name" style="font-size:1.05rem;">MyCoGuard</div>
+        <div class="brand-sub">MCG</div>
+      </div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('dashboard') }}" class="active">🔍 Scan a mushroom</a></li>
+      <li><a href="{{ url_for('history') }}">📋 Report history</a></li>
+      <li><a href="{{ url_for('logout') }}">🚪 Log out</a></li>
+    </ul>
+    <div class="sidebar-foot">Signed in as<br><b style="color:#f0e6d2;">{{ current_user }}</b></div>
+  </aside>
+
+  <main class="main-area">
+    <div class="topbar">
+      <h1 style="margin:0;">Scan a mushroom</h1>
+      <div class="who">Welcome, <b>{{ current_user }}</b></div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div class="flash-stack">
+        {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Upload a photo</h3>
+        <p style="color:var(--ink-soft); margin-top:-.3rem;">Clear, well-lit photos of the cap, gills and stem give the best match.</p>
+        <form method="POST" action="{{ url_for('analyze') }}" enctype="multipart/form-data" id="analyze-form">
+          <label class="dropzone" id="dropzone" for="mushroom_image">
+            <div class="icon">🍄</div>
+            <div><b>Click to upload</b> or drag a photo here</div>
+            <div style="font-size:.8rem;color:var(--ink-soft);margin-top:.3rem;">JPG, PNG or WEBP · up to 10 MB</div>
+            <input type="file" name="mushroom_image" id="mushroom_image" accept=".jpg,.jpeg,.png,.webp">
+          </label>
+          <div id="file-name"></div>
+          <div id="preview-wrap"></div>
+          <button type="submit" class="btn btn-primary" style="margin-top:1.2rem;">Analyze mushroom</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>How it works</h3>
+        <ol style="padding-left:1.1rem; color:var(--ink-soft); font-size:.92rem; display:grid; gap:.5rem;">
+          <li>Upload a photo of the mushroom you want checked.</li>
+          <li>MyCoGuard matches it against a reference library of edible, inedible and poisonous species.</li>
+          <li>You get a safety status, confidence score and full write-up.</li>
+          <li>Download the result as a PDF report to keep or share.</li>
+        </ol>
+        <div class="warning-box">
+          ⚠️ MyCoGuard is a reference tool, not a substitute for expert identification. Never eat a wild mushroom based on an app result alone.
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.2rem;">Recent reports</h3>
+    {% if reports %}
+    <div class="report-list">
+      {% for r in reports %}
+      <a class="report-tile" href="{{ url_for('result', report_id=r['id']) }}">
+        <img src="{{ url_for('static', filename=r['image_path']) }}" alt="{{ r['mushroom_name'] }}">
+        <div class="meta">
+          <div class="name">{{ r['mushroom_name'] }}</div>
+          <div class="date">{{ r['created_at'][:16].replace('T',' ') }}</div>
+          <span class="badge status-{{ 'healthy' if r['category']=='healthy' else ('danger' if r['category']=='poisonous' else 'warning') }}">{{ r['category_label'] }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="card empty-state">
+      <div class="icon">🌱</div>
+      <p>No scans yet — upload your first mushroom photo above.</p>
+    </div>
+    {% endif %}
+  </main>
+</div>
+{% endblock %}

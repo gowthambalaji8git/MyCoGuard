@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Result - MyCoGuard{% endblock %}
+{% block body %}
+{% set status_css = 'status-healthy' if report['category']=='healthy' else ('status-danger' if report['category']=='poisonous' else 'status-warning') %}
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand-mark">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+      <div>
+        <div class="brand-name" style="font-size:1.05rem;">MyCoGuard</div>
+        <div class="brand-sub">MCG</div>
+      </div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('dashboard') }}">🔍 Scan a mushroom</a></li>
+      <li><a href="{{ url_for('history') }}">📋 Report history</a></li>
+      <li><a href="{{ url_for('logout') }}">🚪 Log out</a></li>
+    </ul>
+    <div class="sidebar-foot">Signed in as<br><b style="color:#f0e6d2;">{{ current_user }}</b></div>
+  </aside>
+
+  <main class="main-area">
+    <div class="topbar">
+      <h1 style="margin:0;">Analysis report</h1>
+      <a href="{{ url_for('download_report', report_id=report['id']) }}" class="btn btn-primary btn-sm">⬇ Download PDF report</a>
+    </div>
+
+    <div class="result-banner {{ status_css }}">
+      <span class="badge" style="background:rgba(255,255,255,.22); color:#fff;">{{ report['category_label'] }}</span>
+      <h2 style="margin-top:.5rem;">{{ report['mushroom_name'] }}</h2>
+      <p><i>{{ report['scientific_name'] }}</i></p>
+      <div class="confidence-bar"><div class="confidence-fill" style="width:{{ report['confidence'] }}%;"></div></div>
+      <p style="font-size:.82rem; margin-top:.4rem;">Confidence score: {{ report['confidence'] }}%</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <img class="result-img" src="{{ url_for('static', filename=report['image_path']) }}" alt="Uploaded mushroom photo">
+        <table class="fact-table" style="margin-top:1.2rem;">
+          <tr><th>Mushroom name</th><td>{{ report['mushroom_name'] }}</td></tr>
+          <tr><th>Scientific name</th><td>{{ report['scientific_name'] }}</td></tr>
+          <tr><th>Status / Type</th><td><span class="badge {{ status_css }}">{{ report['category_label'] }}</span></td></tr>
+          <tr><th>Confidence</th><td>{{ report['confidence'] }}%</td></tr>
+          <tr><th>Scanned on</th><td>{{ report['created_at'][:16].replace('T',' ') }}</td></tr>
+        </table>
+        <div class="warning-box">
+          ⚠️ This is a reference match, not a certified identification. When in doubt, don't eat it — consult a local mycologist or poison control.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Full PDF report</h3>
+        <p style="color:var(--ink-soft); font-size:.92rem;">Your downloadable report includes the summary, health/safety details, sources and the closest alternative matches considered — ready to save, print or share.</p>
+        <a href="{{ url_for('download_report', report_id=report['id']) }}" class="btn btn-primary">⬇ Download PDF report</a>
+        <div style="margin-top:1.4rem;">
+          <a href="{{ url_for('dashboard') }}" class="btn btn-ghost" style="width:100%;">Scan another mushroom</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

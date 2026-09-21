@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Create account - MyCoGuard{% endblock %}
+{% block body %}
+<div class="auth-shell">
+  <div class="auth-side">
+    <div class="spore-field"></div>
+    <div class="brand-mark">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="MyCoGuard logo">
+      <div>
+        <div class="brand-name">MyCoGuard</div>
+        <div class="brand-sub">MCG · MUSHROOM SAFETY ANALYZER</div>
+      </div>
+    </div>
+    <div class="pitch">
+      <h1>Every good forager keeps a log. This is yours.</h1>
+      <p>Create a free account to save your scans, revisit past reports, and build a history of every mushroom you've checked.</p>
+    </div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <h2>Create your account</h2>
+      <p class="lede">Takes less than a minute. No email confirmation needed for this demo.</p>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-stack">
+          {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      {% endwith %}
+
+      <form method="POST" action="{{ url_for('register') }}">
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" value="{{ form.get('username','') }}" placeholder="e.g. forager_ann" required minlength="3">
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" value="{{ form.get('email','') }}" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="At least 6 characters" required minlength="6">
+        </div>
+        <div class="field">
+          <label for="confirm_password">Confirm password</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Repeat your password" required minlength="6">
+        </div>
+        <div class="field">
+          <label for="security_question">Security question</label>
+          <select id="security_question" name="security_question" required>
+            {% for q in questions %}
+            <option value="{{ q }}">{{ q }}</option>
+            {% endfor %}
+          </select>
+          <div class="hint">Used to verify it's you if you ever forget your password.</div>
+        </div>
+        <div class="field">
+          <label for="security_answer">Your answer</label>
+          <input type="text" id="security_answer" name="security_answer" placeholder="Keep it memorable" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create account</button>
+      </form>
+
+      <div class="auth-foot">
+        Already have an account? <a href="{{ url_for('login') }}">Log in</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

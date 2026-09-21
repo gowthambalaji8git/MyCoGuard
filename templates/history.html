@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Report history - MyCoGuard{% endblock %}
+{% block body %}
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand-mark">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+      <div>
+        <div class="brand-name" style="font-size:1.05rem;">MyCoGuard</div>
+        <div class="brand-sub">MCG</div>
+      </div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('dashboard') }}">🔍 Scan a mushroom</a></li>
+      <li><a href="{{ url_for('history') }}" class="active">📋 Report history</a></li>
+      <li><a href="{{ url_for('logout') }}">🚪 Log out</a></li>
+    </ul>
+    <div class="sidebar-foot">Signed in as<br><b style="color:#f0e6d2;">{{ current_user }}</b></div>
+  </aside>
+
+  <main class="main-area">
+    <div class="topbar">
+      <h1 style="margin:0;">Report history</h1>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-sm">+ New scan</a>
+    </div>
+
+    {% if reports %}
+    <div class="report-list">
+      {% for r in reports %}
+      <a class="report-tile" href="{{ url_for('result', report_id=r['id']) }}">
+        <img src="{{ url_for('static', filename=r['image_path']) }}" alt="{{ r['mushroom_name'] }}">
+        <div class="meta">
+          <div class="name">{{ r['mushroom_name'] }}</div>
+          <div class="date">{{ r['created_at'][:16].replace('T',' ') }}</div>
+          <span class="badge status-{{ 'healthy' if r['category']=='healthy' else ('danger' if r['category']=='poisonous' else 'warning') }}">{{ r['category_label'] }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="card empty-state">
+      <div class="icon">🌱</div>
+      <p>No scans yet — upload your first mushroom photo to get started.</p>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-sm">Scan a mushroom</a>
+    </div>
+    {% endif %}
+  </main>
+</div>
+{% endblock %}

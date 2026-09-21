@@ -1,0 +1,351 @@
+POISONOUS MUSHROOMS
+
+IMPORTANT SAFETY WARNING:
+Suspected mushroom poisoning can be a medical emergency.
+Do not use this dataset to decide whether a wild mushroom is safe to eat.
+After suspected ingestion, contact emergency medical services or a poison center immediately.
+
+
+1. Death Cap — Amanita phalloides
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Can cause severe poisoning.
+- Can progress to acute liver failure.
+
+Poison type:
+- Amatoxins.
+
+How it attacks:
+- Amatoxins inhibit RNA polymerase II.
+- This disrupts protein synthesis in cells.
+
+Main body targets:
+- Gastrointestinal tract
+- Liver
+- Kidneys in severe cases
+
+Possible symptoms:
+- Severe abdominal pain
+- Vomiting
+- Diarrhea
+- Symptoms may temporarily improve before serious liver injury develops.
+
+Medical treatment:
+- Emergency hospital treatment.
+- Toxicology consultation.
+- Specialist-directed supportive and antidotal treatment may be used.
+- Severe liver failure may require liver-transplant evaluation.
+
+Source:
+CDC
+Merck Manual
+Poison Control
+
+
+2. Destroying Angel — Amanita virosa
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Severe delayed poisoning.
+- Can cause liver failure.
+
+Poison type:
+- Amatoxins.
+
+How it attacks:
+- Amatoxins inhibit RNA polymerase II and disrupt protein production.
+
+Main body targets:
+- Gastrointestinal tract
+- Liver
+- Kidneys
+
+Possible symptoms:
+- Vomiting
+- Diarrhea
+- Abdominal pain
+- Delayed liver injury
+
+Medical treatment:
+- Emergency medical evaluation.
+- Supportive hospital treatment.
+- Toxicology consultation.
+- Severe liver injury may require transplant evaluation.
+
+Source:
+CDC
+Merck Manual
+
+
+3. Fly Agaric — Amanita muscaria
+
+Uses:
+- Not recommended as food.
+
+Problem / Poison:
+- Can cause neurological and gastrointestinal poisoning.
+
+Poison type:
+- Ibotenic acid
+- Muscimol
+
+How it attacks:
+- These compounds affect neurotransmitter systems in the brain.
+
+Main body targets:
+- Central nervous system
+- Gastrointestinal tract
+
+Possible symptoms:
+- Confusion
+- Agitation
+- Drowsiness
+- Vomiting
+- Hallucinations
+- Seizures in severe cases
+
+Medical treatment:
+- Supportive hospital care.
+- Monitoring of breathing and neurological status.
+- Symptom-based treatment by medical professionals.
+
+Source:
+Merck Manual
+Poison Control
+
+
+4. Panther Cap — Amanita pantherina
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Neurological poisoning.
+
+Poison type:
+- Ibotenic acid
+- Muscimol
+
+How it attacks:
+- Neuroactive compounds affect brain neurotransmitter pathways.
+
+Main body targets:
+- Central nervous system
+- Gastrointestinal tract
+
+Possible symptoms:
+- Confusion
+- Agitation
+- Drowsiness
+- Vomiting
+- Abnormal behavior
+- Seizures in severe cases
+
+Medical treatment:
+- Supportive emergency care.
+- Monitoring.
+- Symptom-based treatment under medical supervision.
+
+Source:
+Poison Control
+Merck Manual
+
+
+5. False Morel — Gyromitra esculenta
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Gyromitrin poisoning.
+- Can cause seizures and liver injury.
+
+Poison type:
+- Gyromitrin and toxic metabolites.
+
+How it attacks:
+- Toxic metabolites interfere with pyridoxine-dependent neurotransmitter synthesis.
+
+Main body targets:
+- Gastrointestinal tract
+- Central nervous system
+- Liver
+
+Possible symptoms:
+- Nausea
+- Vomiting
+- Abdominal pain
+- Headache
+- Seizures
+- Liver injury
+
+Medical treatment:
+- Emergency toxicology care.
+- Seizure management.
+- Supportive treatment.
+- Specialist-directed treatment may be required.
+
+Source:
+CDC
+Poison Control
+
+
+6. Deadly Webcap — Cortinarius rubellus
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Can cause delayed severe kidney injury.
+
+Poison type:
+- Orellanine.
+
+How it attacks:
+- Orellanine causes toxic injury to kidney tissue.
+
+Main body target:
+- Kidneys.
+
+Possible symptoms:
+- Nausea
+- Vomiting
+- Thirst
+- Reduced urine
+- Kidney failure
+
+Medical treatment:
+- Urgent hospital evaluation.
+- Kidney-function monitoring.
+- Nephrology care.
+- Dialysis may be required in severe kidney failure.
+
+Source:
+Poison Control
+Merck Manual
+
+
+7. Fool's Webcap — Cortinarius orellanus
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Delayed renal poisoning.
+
+Poison type:
+- Orellanine.
+
+How it attacks:
+- Causes toxic injury to kidney tissue.
+
+Main body target:
+- Kidneys.
+
+Possible symptoms:
+- Gastrointestinal symptoms
+- Excessive thirst
+- Increased or reduced urination
+- Kidney failure
+
+Medical treatment:
+- Hospital assessment.
+- Kidney-function monitoring.
+- Nephrology treatment.
+- Dialysis may be required in severe cases.
+
+Source:
+Poison Control
+Merck Manual
+
+
+8. Jack-o'-Lantern Mushroom — Omphalotus olearius
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Causes gastrointestinal poisoning.
+
+Poison type:
+- Gastrointestinal toxic compounds.
+
+How it attacks:
+- Causes irritation and dysfunction of the gastrointestinal tract.
+
+Main body targets:
+- Stomach
+- Intestines
+
+Possible symptoms:
+- Nausea
+- Vomiting
+- Abdominal cramps
+- Diarrhea
+
+Medical treatment:
+- Supportive medical care.
+- Hydration.
+- Monitoring.
+- Hospital treatment if symptoms are severe.
+
+Source:
+Poison Control
+FDA
+
+
+9. Deadly Dapperling — Lepiota brunneoincarnata
+
+Uses:
+- No safe culinary use.
+
+Problem / Poison:
+- Can cause severe delayed liver toxicity.
+
+Poison type:
+- Amatoxins.
+
+How it attacks:
+- Amatoxins inhibit RNA polymerase II.
+- This disrupts protein synthesis.
+
+Main body targets:
+- Gastrointestinal tract
+- Liver
+- Kidneys in severe cases
+
+Possible symptoms:
+- Vomiting
+- Diarrhea
+- Abdominal pain
+- Delayed liver injury
+- Liver failure
+
+Medical treatment:
+- Emergency hospital treatment.
+- Toxicology consultation.
+- Specialist-directed supportive/antidotal treatment.
+- Severe liver failure may require transplant evaluation.
+
+Source:
+Poison Control
+Merck Manual
+
+
+GENERAL MEDICAL WARNING
+
+Mushroom poisoning can be delayed and symptoms may initially appear mild.
+Do not wait for symptoms to become severe after suspected ingestion.
+
+Do not induce vomiting unless instructed by a qualified medical professional or poison center.
+
+For a real suspected poisoning:
+1. Seek emergency medical care immediately.
+2. Contact a poison center where available.
+3. Keep a photograph or sample of the mushroom only if it can be collected safely.
+4. Do not consume additional mushrooms for comparison.
